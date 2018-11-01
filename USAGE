@@ -1,0 +1,36 @@
+    NAME
+        tilder - Reimplementation of baker in Python 3
+
+    SYNOPSIS
+        python3 tilder.py [-dt=key] file ...
+
+    DESCRIPTION
+        Back up files into respective subdirectories suffixed by the tilde (~).
+
+    OPTIONS
+        -dt=key
+            d
+                Timestamp reduces from yyyymmdd_hhmm to yyyymmdd.
+            none
+                Timestamp suppressed.
+
+    EXAMPLES
+        python3 tilder.pl oliver.eps heaviside.dat
+        python3 tilder.pl bateman.ps -dt=d
+        python3 tilder.pl harry_bateman.ps -dt=none
+
+    REQUIREMENTS
+        Python 3 (>v3.6)
+
+    SEE ALSO
+        python(1)
+
+    AUTHOR
+        Jaewoong Jang <jang.comsci@gmail.com>
+
+    COPYRIGHT
+        Copyright (c) 2018 Jaewoong Jang
+
+    LICENSE
+        This software is available under the MIT license;
+        the license information is found in 'LICENSE'.
