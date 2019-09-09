@@ -1,36 +1,45 @@
-    NAME
-        tilder - Reimplementation of baker in Python 3
+NAME
+        tilder - Back up files into respective subdirectories
 
-    SYNOPSIS
-        python3 tilder.py [-dt=key] file ...
+SYNOPSIS
+        python tilder.py [file ...]
+                         [-tstamp=key] [-tstamp_pos=front|rear]
+                         [-nofm] [-nopause]
 
-    DESCRIPTION
-        Back up files into respective subdirectories suffixed by the tilde (~).
+DESCRIPTION
+        By emulating baker, the author's Perl program,
+        this Python program facilitates backing up files.
+        The main difference between the two programs is
+        the method of naming subdirectories:
+        - tilder (Python 3) ... subdirs are suffixed by the tilde (~)
+        - baker (Perl 5)    ... subdirs are prefixed by 'bak_'
 
-    OPTIONS
-        -dt=key
-            d
-                Timestamp reduces from yyyymmdd_hhmm to yyyymmdd.
+OPTIONS
+        -tstamp=key (short term: -ts)
+            d (default)
+                Timestamp up to yyyymmdd
+            dt
+                Timestamp up to yyyymmdd_hhmm
             none
-                Timestamp suppressed.
+                No timestamp
 
-    EXAMPLES
-        python3 tilder.pl oliver.eps heaviside.dat
-        python3 tilder.pl bateman.ps -dt=d
-        python3 tilder.pl harry_bateman.ps -dt=none
+        -tstamp_pos=front|rear (short term: -pos, default: rear)
 
-    REQUIREMENTS
+EXAMPLES
+        python tilder.pl oliver.eps heaviside.dat -nopause
+        python tilder.pl bateman.ps -tstamp=d
+        python tilder.pl harry_bateman.ps -ts=none
+
+REQUIREMENTS
         Python 3 (>v3.6)
 
-    SEE ALSO
-        python(1)
+AUTHOR
+        Jaewoong Jang <jangj@korea.ac.kr>
 
-    AUTHOR
-        Jaewoong Jang <jang.comsci@gmail.com>
+COPYRIGHT
+        Copyright (c) 2018-2019 Jaewoong Jang
 
-    COPYRIGHT
-        Copyright (c) 2018 Jaewoong Jang
-
-    LICENSE
+LICENSE
         This software is available under the MIT license;
         the license information is found in 'LICENSE'.
+
