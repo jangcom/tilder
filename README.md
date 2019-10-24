@@ -53,7 +53,14 @@
         none
             No timestamp
 
-    -tstamp_pos=front|rear (short term: -pos, default: rear)</code></pre>
+    -tstamp_pos=front|rear (short term: -pos, default: rear)
+
+    -nofm
+        The front matter will not be displayed at the beginning of the program.
+
+    -nopause
+        The shell will not be paused at the end of the program.
+        Use it for a batch run.</code></pre>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
