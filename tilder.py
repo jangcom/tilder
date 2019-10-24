@@ -27,6 +27,13 @@ OPTIONS
 
     -tstamp_pos=front|rear (short term: -pos, default: rear)
 
+    -nofm
+        The front matter will not be displayed at the beginning of the program.
+
+    -nopause
+        The shell will not be paused at the end of the program.
+        Use it for a batch run.
+
 EXAMPLES
     python tilder.pl oliver.eps heaviside.dat -nopause
     python tilder.pl bateman.ps -tstamp=d
@@ -222,13 +229,13 @@ def outer_tilder():
         prog_info = {
             'titl': 'tilder',
             'expl': 'Back up files into respective subdirectories',
-            'vers': 'v1.01',
-            'date_last': '2019-09-10',
+            'vers': 'v1.02',
+            'date_last': '2019-10-24',
             'date_first': '2018-06-23',
             'auth': {
                 'auth': 'Jaewoong Jang',
-                'posi': 'PhD student',
-                'affi': 'University of Tokyo',
+#                'posi': '',
+#                'affi': '',
                 'mail': 'jangj@korea.ac.kr',
             },
         }
