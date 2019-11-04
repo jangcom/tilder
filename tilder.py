@@ -70,24 +70,24 @@ from datetime import datetime
 #
 def parse_argv(cmd_opts, run_opts):
     """Program arguments parser"""
-    
+
     for arg in list(sys.argv[1:]):
         # Files to be backed up
         if exists(arg) and not isdir(arg):
             run_opts['backup_fnames'].append(arg)
-        
+
         # Timestamp level
         if re.search(cmd_opts['tstamp'], arg):
             run_opts['tstamp'] = re.sub(cmd_opts['tstamp'], '', arg)
-        
+
         # Timestamp position
         if re.search(cmd_opts['tstamp_pos'], arg):
             run_opts['tstamp_pos'] = re.sub(cmd_opts['tstamp_pos'], '', arg)
-        
+
         # The front matter won't be displayed at the beginning of the program.
         if re.search(cmd_opts['nofm'], arg):
             run_opts['is_nofm'] = 1
-        
+
         # The shell won't be paused at the end of the program.
         if re.search(cmd_opts['nopause'], arg):
             run_opts['is_nopause'] = 1
@@ -95,9 +95,9 @@ def parse_argv(cmd_opts, run_opts):
 
 def show_front_matter(*args):
     """Display the front matter."""
-    
+
     prog_info = args[0]
-    
+
     # Determine which fields to print.
     (is_prog, is_auth) = '', ''
     for arg in list(args[1:]):
@@ -105,11 +105,11 @@ def show_front_matter(*args):
             is_prog = 1
         if arg == 'auth':
             is_auth = 1
-    
+
     # Top rule
     if is_prog == 1 or is_auth == 1:
         print("+" * 70)
-    
+
     # Program info, except the usage
     if is_prog == 1:
         print(
@@ -122,14 +122,14 @@ def show_front_matter(*args):
             prog_info['vers'],
             "(%s)" % prog_info['date_last'],
         )
-    
+
     # Author info
     if is_auth == 1:
         if is_prog == 1:
             print("")
         for v in prog_info['auth'].values():
             print(v)
-    
+
     # Bottom rule
     if is_prog == 1 or is_auth == 1:
         print("+" * 70)
@@ -137,13 +137,13 @@ def show_front_matter(*args):
 
 def pause_shell():
     """Pause the shell."""
-    
+
     input("Press enter to exit...")
 
 
 def tilder(run_opts):
     """Back up the designated files."""
-    
+
     # Generate a timestamp.
     _ymd = datetime.today().strftime("%Y%m%d")
     _hms = datetime.today().strftime("%H%M%S") # Capital: zero-padded
@@ -161,8 +161,8 @@ def tilder(run_opts):
     if re.search(r'(?i)\bdt\b', run_opts['tstamp']):
         tstamp_of_int = datetimes['ymdhm']
     if re.search(r'(?i)\bnone\b', run_opts['tstamp']):
-        tstamp_of_int = ''
-    
+        tstamp_of_int = datetimes['none']
+
     # Filename elements
     fname_old_and_new = {}
     lengthiest = ''
@@ -170,13 +170,13 @@ def tilder(run_opts):
     path_of_int = '.'
     backup_flag = '~'
     fname_re = re.compile(r'(.*)([.]\w+)$')
-    
+
     # Construct pairs of old and new filenames.
     for fname_old in run_opts['backup_fnames']:
         # Find the lengthiest filename to construct a conversion.
         if len(fname_old) > len(lengthiest):
             lengthiest = fname_old
-        
+
         # Dissociate a filename and define a backup filename.
         bname = re.sub(fname_re, r'\1', fname_old)
         ext = re.sub(fname_re, r'\2', fname_old)
@@ -187,14 +187,14 @@ def tilder(run_opts):
             fname_new = bname + fname_sep + tstamp_of_int
         if not ext == fname_old: # For extensionless filenames
             fname_new = fname_new + ext
-        
+
         # Buffer the old and new filenames as key-val pairs.
         subdir = path_of_int + path_delim + fname_old + backup_flag
         fname_old_and_new[fname_old] = [
             subdir,
             subdir + path_delim + fname_new,
         ]
-    
+
     # Back up the designated files following notification.
     if fname_old_and_new:
         print("-" * 70)
@@ -224,13 +224,13 @@ def tilder(run_opts):
 
 def outer_tilder():
     """tilder running routine"""
-    
+
     if len(sys.argv) >= 2:
         prog_info = {
             'titl': 'tilder',
             'expl': 'Back up files into respective subdirectories',
             'vers': 'v1.02',
-            'date_last': '2019-10-24',
+            'date_last': '2019-11-04',
             'date_first': '2018-06-23',
             'auth': {
                 'auth': 'Jaewoong Jang',
@@ -252,20 +252,20 @@ def outer_tilder():
             'is_nofm': 0,
             'is_nopause': 0,
         }
-        
+
         # ARGV parsing
         parse_argv(cmd_opts, run_opts)
-        
+
         # Notification - beginning
         if not run_opts['is_nofm']:
             show_front_matter(prog_info, 'prog', 'auth')
-        
+
         # Main
         tilder(run_opts)
-        
+
         # Notification - end
         pause_shell() if not run_opts['is_nopause'] else print()
-        
+
     elif len(sys.argv) < 2:
         print(__doc__)
         pause_shell()
