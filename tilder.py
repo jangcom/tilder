@@ -23,7 +23,7 @@ OPTIONS
         dt
             Timestamping up to yyyymmdd_hhmm
         none
-            No timestamp
+            No timestamping
 
     --ts_pos {bef,aft}
         bef
