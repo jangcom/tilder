@@ -19,11 +19,11 @@ OPTIONS
 
     --ts_lev {d,dt,none}
         d (default)
-            Timestamp up to yyyymmdd
+            Timestamping up to yyyymmdd
         dt
-            Timestamp up to yyyymmdd_hhmm
+            Timestamping up to yyyymmdd_hhmm
         none
-            No timestamp
+            No timestamping
 
     --ts_pos {bef,aft}
         bef
