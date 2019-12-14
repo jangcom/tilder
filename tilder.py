@@ -82,8 +82,8 @@ def parse_argv(run_opts):
     # argparse
     #
     parser = argparse.ArgumentParser(
-        description="Back up files \
-        into respective subdirectories",
+        description='Back up files \
+        into respective subdirectories',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     # Optional, selection type
     parser.add_argument('--ts_lev',
@@ -126,32 +126,32 @@ def show_front_matter(*opts):
     prog_info = opts[0]
 
     # Determine which fields to print.
-    is_prog = is_auth = 0
+    is_prog = is_auth = False
     for opt in opts[1:]:
         if opt == 'prog':
-            is_prog = 1
+            is_prog = True
         if opt == 'auth':
-            is_auth = 1
+            is_auth = True
 
     # Top rule
-    if is_prog == 1 or is_auth == 1:
+    if is_prog or is_auth:
         print('+' * 70)
 
     # Program info, except the usage
-    if is_prog == 1:
+    if is_prog:
         print(prog_info['titl'], '-', prog_info['expl'])
         print(prog_info['titl'], prog_info['vers'],
               '({})'.format(prog_info['date_last']))
 
     # Author info
-    if is_auth == 1:
-        if is_prog == 1:
+    if is_auth:
+        if is_prog:
             print('')
         for v in prog_info['auth'].values():
             print(v)
 
     # Bottom rule
-    if is_prog == 1 or is_auth == 1:
+    if is_prog or is_auth:
         print('+' * 70)
 
 
