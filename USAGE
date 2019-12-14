@@ -2,20 +2,19 @@ NAME
         tilder - Back up files into respective subdirectories
 
 SYNOPSIS
-        python tilder.py [file ...]
-                         [-tstamp=key] [-tstamp_pos=front|rear]
-                         [-nofm] [-nopause]
+        python tilder.py [-h] [--ts_lev {d,dt,none}] [--ts_pos {bef,aft}]
+                         [--nofm] [--nopause]
+                         file [file ...]
 
 DESCRIPTION
-        By emulating baker, the author's Perl program,
-        this Python program facilitates backing up files.
-        The main difference between the two programs is
-        the method of naming subdirectories:
-        - tilder (Python 3) ... subdirs are suffixed by the tilde (~)
-        - baker (Perl 5)    ... subdirs are prefixed by 'bak_'
+        Back up your files into respective subdirectories
+        with explicit timestamps.
 
 OPTIONS
-        -tstamp=key (short term: -ts)
+        -h, --help
+            The argparse help message will be displayed.
+
+        --ts_lev {d,dt,none}
             d (default)
                 Timestamp up to yyyymmdd
             dt
@@ -23,22 +22,37 @@ OPTIONS
             none
                 No timestamp
 
-        -tstamp_pos=front|rear (short term: -pos, default: rear)
+        --ts_pos {bef,aft}
+            bef
+                Timestamping before the filename
+            aft (default)
+                Timestamping after the filename
 
-        -nofm
+        --nofm
             The front matter will not be displayed at the beginning of the program.
 
-        -nopause
+        --nopause
             The shell will not be paused at the end of the program.
             Use it for a batch run.
 
+        file ...
+            The list of files to be backed up.
+
 EXAMPLES
-        python tilder.pl oliver.eps heaviside.dat -nopause
-        python tilder.pl bateman.ps -tstamp=d
-        python tilder.pl harry_bateman.ps -ts=none
+        python tilder.pl oliver.eps heaviside.dat --nopause
+        python tilder.pl bateman.ps --ts_lev=d
+        python tilder.pl harry_bateman.ps --ts_lev=none
 
 REQUIREMENTS
         Python 3 (>v3.6)
+
+SEE ALSO
+        We also have a file backup assistant written in Perl:
+        L<baker|https://github.com/jangcom/baker>
+        The main difference between tilder and baker is
+        the naming of subdirectories:
+        - tilder (Python 3) ... subdirs are suffixed by the tilde (~)
+        - baker (Perl 5)    ... subdirs are prefixed by 'bak_'
 
 AUTHOR
         Jaewoong Jang <jangj@korea.ac.kr>
