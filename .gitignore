@@ -1,6 +1,3 @@
-# github archive
-github/
-
 # tilder records
 tilder.py~/
 tilder.bat
@@ -8,9 +5,10 @@ tilder.bat
 # MSWin link files
 *.lnk
 
-# POD-related
+# Misc.
 tilder.pod
 tilder_usage.bat
 tilder.html
 pod2htmd.tmp
 tilder_pod2html.bat
+tilder_pycodestyle.bat
