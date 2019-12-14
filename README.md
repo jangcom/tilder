@@ -27,7 +27,7 @@
 
 <h1 id="NAME">NAME</h1>
 
-<pre><code>    tilder - Back up files into respective subdirectories</code></pre>
+<pre><code>    tilder - File backup assistant</code></pre>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
@@ -81,7 +81,7 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<pre><code>    We also have a file backup assistant written in Perl:
+<pre><code>    We have another file backup assistant written in Perl:
     L&lt;baker|https://github.com/jangcom/baker&gt;
     The main difference between tilder and baker is
     the naming of subdirectories:
