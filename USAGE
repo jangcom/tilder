@@ -1,5 +1,5 @@
 NAME
-        tilder - Back up files into respective subdirectories
+        tilder - File backup assistant
 
 SYNOPSIS
         python tilder.py [-h] [--ts_lev {d,dt,none}] [--ts_pos {bef,aft}]
@@ -47,7 +47,7 @@ REQUIREMENTS
         Python 3 (>v3.6)
 
 SEE ALSO
-        We also have a file backup assistant written in Perl:
+        We have another file backup assistant written in Perl:
         L<baker|https://github.com/jangcom/baker>
         The main difference between tilder and baker is
         the naming of subdirectories:
