@@ -200,9 +200,9 @@ def tilder(run_opts):
         bname = re.sub(fname_re, r'\1', fname_old)
         ext = re.sub(fname_re, r'\2', fname_old)
         fname_sep = '_' if ts else ''
-        if re.search(r'(?i)(bef|front)', run_opts['ts_pos']):
+        if re.search(r'(?i)bef', run_opts['ts_pos']):
             fname_new = ts + fname_sep + bname
-        elif re.search(r'(?i)(aft|rear)', run_opts['ts_pos']):
+        elif re.search(r'(?i)aft', run_opts['ts_pos']):
             fname_new = bname + fname_sep + ts
         if not ext == fname_old:  # For extensionless filenames
             fname_new = fname_new + ext
@@ -239,7 +239,7 @@ def outer_tilder():
             'titl': 'tilder',
             'expl': 'File backup assistant',
             'vers': 'v1.02',
-            'date_last': '2019-12-14',
+            'date_last': '2019-12-15',
             'date_first': '2018-06-23',
             'auth': {
                 'auth': 'Jaewoong Jang',
