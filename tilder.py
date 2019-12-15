@@ -112,7 +112,7 @@ def parse_argv(run_opts):
     #
     # Actions
     #
-    run_opts['ts'] = args.ts_lev
+    run_opts['ts_lev'] = args.ts_lev
     run_opts['ts_pos'] = args.ts_pos
     run_opts['is_nofm'] = args.is_nofm
     run_opts['is_nopause'] = args.is_nopause
@@ -175,12 +175,12 @@ def tilder(run_opts):
         'ymdhms': _ymd + ts_sep + _hms,
         'ymdhm': _ymd + ts_sep + _hm,
     }
-    if re.search(r'(?i)\bd\b', run_opts['ts']):
-        ts_of_int = datetimes['ymd']
-    if re.search(r'(?i)\bdt\b', run_opts['ts']):
-        ts_of_int = datetimes['ymdhm']
-    if re.search(r'(?i)\bnone\b', run_opts['ts']):
-        ts_of_int = datetimes['none']
+    if re.search(r'(?i)\bd\b', run_opts['ts_lev']):
+        ts = datetimes['ymd']
+    if re.search(r'(?i)\bdt\b', run_opts['ts_lev']):
+        ts = datetimes['ymdhm']
+    if re.search(r'(?i)\bnone\b', run_opts['ts_lev']):
+        ts = datetimes['none']
 
     # Filename elements
     fnames_old_and_new = {}
@@ -199,11 +199,11 @@ def tilder(run_opts):
         # Dissociate a filename and define a backup filename.
         bname = re.sub(fname_re, r'\1', fname_old)
         ext = re.sub(fname_re, r'\2', fname_old)
-        fname_sep = '_' if ts_of_int else ''
+        fname_sep = '_' if ts else ''
         if re.search(r'(?i)(bef|front)', run_opts['ts_pos']):
-            fname_new = ts_of_int + fname_sep + bname
+            fname_new = ts + fname_sep + bname
         elif re.search(r'(?i)(aft|rear)', run_opts['ts_pos']):
-            fname_new = bname + fname_sep + ts_of_int
+            fname_new = bname + fname_sep + ts
         if not ext == fname_old:  # For extensionless filenames
             fname_new = fname_new + ext
 
@@ -248,10 +248,10 @@ def outer_tilder():
         }
         run_opts = {
             'backup_files': [],
-            'ts': 'd',
-            'ts_pos': 'aft',
-            'is_nofm': False,
-            'is_nopause': False,
+            'ts_lev': '',  # Default: assigned in parse_argv()
+            'ts_pos': '',
+            'is_nofm': '',
+            'is_nopause': '',
         }
 
         parse_argv(run_opts)
