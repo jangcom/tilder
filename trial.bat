@@ -1,2 +1,2 @@
 @echo off
-python tilder.py LOG USAGE
+python tilder.py LICENSE tilder.py

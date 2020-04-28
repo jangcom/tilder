@@ -1,0 +1,56 @@
+NAME
+        tilder - File backup assistant
+
+SYNOPSIS
+        python tilder.py [-h] [--ts_lev {d,dt,none}] [--ts_pos {bef,aft}]
+                         [--nopause] file [file ...]
+
+DESCRIPTION
+        Back up your files into respective subdirectories
+        with explicit timestamps.
+
+OPTIONS
+        -h, --help
+            Help message
+
+        --ts_lev {d,dt,none}
+            d (default)
+                Timestamping up to yyyymmdd
+            dt
+                Timestamping up to yyyymmdd_hhmm
+            none
+                No timestamping
+
+        --ts_pos {bef,aft}
+            bef
+                Timestamping before the filename
+            aft (default)
+                Timestamping after the filename
+
+        --nopause
+            The shell will not be paused at the end of the program.
+
+        file ...
+            List of files to be backed up.
+
+EXAMPLES
+        python tilder.pl oliver.eps heaviside.dat --nopause
+        python tilder.pl bateman.ps --ts_lev=d
+
+REQUIREMENTS
+        Python 3
+
+SEE ALSO
+        Sister program written in Perl:
+        L<baker|https://github.com/jangcom/baker>
+
+AUTHOR
+        Jaewoong Jang <jangj@korea.ac.kr>
+
+COPYRIGHT
+        Copyright (c) 2018-2020 Jaewoong Jang
+
+LICENSE
+        This software is available under the MIT license;
+        the license information is found in 'LICENSE'.
+

@@ -1,14 +1,2 @@
-# tilder records
-tilder.py~/
-tilder.bat
-
-# MSWin link files
 *.lnk
-
-# Misc.
-tilder.pod
-tilder_usage.bat
-tilder.html
-pod2htmd.tmp
-tilder_pod2html.bat
-tilder_pycodestyle.bat
+run_pycodestyle.bat
