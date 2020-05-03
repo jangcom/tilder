@@ -1,5 +1,5 @@
 NAME
-        tilder - File backup assistant
+    tilder - File backup assistant
 
 SYNOPSIS
         python tilder.py [-h] [--ts_lev {d,dt,none}] [--ts_pos {bef,aft}]
@@ -38,19 +38,18 @@ EXAMPLES
         python tilder.pl bateman.ps --ts_lev=d
 
 REQUIREMENTS
-        Python 3
+    Python 3
 
 SEE ALSO
-        Sister program written in Perl:
-        L<baker|https://github.com/jangcom/baker>
+    baker: Sister Perl program <https://github.com/jangcom/baker>
 
 AUTHOR
-        Jaewoong Jang <jangj@korea.ac.kr>
+    Jaewoong Jang <jangj@korea.ac.kr>
 
 COPYRIGHT
-        Copyright (c) 2018-2020 Jaewoong Jang
+    Copyright (c) 2018-2020 Jaewoong Jang
 
 LICENSE
-        This software is available under the MIT license;
-        the license information is found in 'LICENSE'.
+    This software is available under the MIT license; the license
+    information is found in 'LICENSE'.
 

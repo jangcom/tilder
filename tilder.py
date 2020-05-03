@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import os
-import argparse
 import re
-import shutil
 from datetime import datetime
+import shutil
+import argparse
 
 
 def parse_argv():
