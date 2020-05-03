@@ -27,7 +27,7 @@
 
 <h1 id="NAME">NAME</h1>
 
-<pre><code>    tilder - File backup assistant</code></pre>
+<p>tilder - File backup assistant</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
@@ -71,25 +71,23 @@
 
 <h1 id="REQUIREMENTS">REQUIREMENTS</h1>
 
-<pre><code>    Python 3</code></pre>
+<p>Python 3</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<pre><code>    Sister program written in Perl:
-    L&lt;baker|https://github.com/jangcom/baker&gt;</code></pre>
+<p><a href="https://github.com/jangcom/baker">baker: Sister Perl program</a></p>
 
 <h1 id="AUTHOR">AUTHOR</h1>
 
-<pre><code>    Jaewoong Jang &lt;jangj@korea.ac.kr&gt;</code></pre>
+<p>Jaewoong Jang &lt;jangj@korea.ac.kr&gt;</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<pre><code>    Copyright (c) 2018-2020 Jaewoong Jang</code></pre>
+<p>Copyright (c) 2018-2020 Jaewoong Jang</p>
 
 <h1 id="LICENSE">LICENSE</h1>
 
-<pre><code>    This software is available under the MIT license;
-    the license information is found in &#39;LICENSE&#39;.</code></pre>
+<p>This software is available under the MIT license; the license information is found in &#39;LICENSE&#39;.</p>
 
 
 </body>

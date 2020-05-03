@@ -1,6 +1,6 @@
 =head1 NAME
 
-    tilder - File backup assistant
+tilder - File backup assistant
 
 =head1 SYNOPSIS
 
@@ -44,24 +44,23 @@
 
 =head1 REQUIREMENTS
 
-    Python 3
+Python 3
 
 =head1 SEE ALSO
 
-    Sister program written in Perl:
-    L<baker|https://github.com/jangcom/baker>
+L<baker: Sister Perl program|https://github.com/jangcom/baker>
 
 =head1 AUTHOR
 
-    Jaewoong Jang <jangj@korea.ac.kr>
+Jaewoong Jang <jangj@korea.ac.kr>
 
 =head1 COPYRIGHT
 
-    Copyright (c) 2018-2020 Jaewoong Jang
+Copyright (c) 2018-2020 Jaewoong Jang
 
 =head1 LICENSE
 
-    This software is available under the MIT license;
-    the license information is found in 'LICENSE'.
+This software is available under the MIT license;
+the license information is found in 'LICENSE'.
 
 =cut
